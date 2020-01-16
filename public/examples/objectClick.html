@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:56780/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+   <link href="./objectClick_files/bootstrap.css" rel="stylesheet">
+	<link href="./objectClick_files/site.css" rel="stylesheet">
+</head>
+<body cz-shortcut-listen="true">
+    
+
+    
+
+
+<style>
+    body {
+        margin: 0px;
+        height: 100%;
+        padding-top: 0px !important;
+    }
+
+    #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #f2efe9;
+    }
+
+    #popupDetail {
+        opacity: 1;
+        position:absolute;
+    }
+
+    .detail-content {
+        width: 300px;
+        height: 200px;
+        background-color: white;
+        color: #333;
+        box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .detail-close-button {
+        position: relative;
+        top: -200px;
+        right: -280px;
+        padding: 4px 4px 0 0;
+        border: none;
+        text-align: center;
+        width: 18px;
+        height: 14px;
+        font: 16px/14px Tahoma, Verdana, sans-serif;
+        color: #c3c3c3;
+        text-decoration: none;
+        font-weight: bold;
+        background: transparent;
+        text-decoration: none !important;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+</style>
+
+<div id="map"></div>
+
+
+<div id="popupDetail" style="display: none;">
+    <div class="detail-content">
+        <div>Object Id: <span id="objId"></span></div>
+		<div>Object Name: <span id="objName"></span></div>
+        <div>
+            <input class="btn btn-info" value="Test button 1">
+            <input class="btn btn-success" value="Test button 2">
+            <input class="btn btn-warning" value="Test button 3">
+        </div>
+    </div>
+    <a class="detail-close-button" href="#close">×</a>
+</div>
+
+<script src="./objectClick_files/jquery-3.3.1.js"></script>
+<script src="./objectClick_files/bootstrap.js"></script>
+<script src="./objectClick_files/map4dsdk@1.0.2.prod.js"></script>
+
+<script>
+	let selectedId = null;
+
+	let map = new map4d.Map(document.getElementById("map"),
+		{
+			zoom: 13,
+			center: [10.793113, 106.720739],
+			tilt: 60,
+			geolocate: true,
+			accessKey: "98fd21346d83bee24dc734231f7609c9"
+		}
+	)
+	map.enable3dMode(true);
+	//set switch mode Auto for automatically switching between 2D & 3D
+	map.setSwitchMode(map4d.SwitchMode.Auto);
+	showPopupDetail(false);
+
+	let clickMapsEventClick = map.addListener("click", (args) => {		
+		console.log("Object clicked: ");
+		console.log(args);
+		selectedId = args.object.getId();
+		
+		//get data
+		
+		var selectedObjectType = args.xa.type;
+
+		// get popup position
+			let offsetX = args.xa.offsetX;
+			let offsetY = args.xa.offsetY;
+			let objectName = args.object.getName();
+			// show popup
+			showPopupDetail(true);
+
+			// set position for popup
+			//$("#popupDetail").css("transform", "translate3d(" + offsetX + "px, " + offsetY + "px, 0px)");
+			$("#popupDetail").css("left", offsetX + "px");
+			$("#popupDetail").css("top", offsetY + "px");
+
+			// set content for popup
+			$("#popupDetail").find("#objId").html(selectedId);
+			$("#popupDetail").find("#objName").html(objectName);
+
+			if (selectedId != "5be55b80cbdf9f10f4f8bb58") {
+				$("#popupDetail").find(".btn-warning").hide();
+			} else {
+				$("#popupDetail").find(".btn-warning").show();
+			}
+	}, {object: true});
+
+	function showPopupDetail(isShow) {
+		if (isShow) {
+			$("#popupDetail").show();
+		} else {
+			$("#popupDetail").hide();
+		}
+	}
+
+	$("#popupDetail .detail-close-button").click(function (e) {
+		showPopupDetail(false);
+	});
+
+	$("#popupDetail .btn-info").click(function (e) {
+		alert("Click button 1 with id: " + $(this).parent().parent().find("#objId").html());
+	});
+
+	$("#popupDetail .btn-success").click(function (e) {
+		alert("Click button 2 with id: " + $(this).parent().parent().find("#objId").html());
+	});
+
+	$("#popupDetail .btn-warning").click(function (e) {
+		alert("Click button 3 with id: " + $(this).parent().parent().find("#objId").html());
+	});
+
+</script>
+</body>
+</html>

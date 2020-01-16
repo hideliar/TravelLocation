@@ -1,0 +1,112 @@
+body{
+    overflow: hidden;
+    background: #f1f1f1;
+    font-family: Roboto;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+a.navbar-brand.logo-main {
+    height: 80px;
+    width: auto;
+}
+
+a.navbar-brand.logo-main img {
+    min-width: 100%;
+    height: 100%;
+}
+.sticky .navbar-brand.logo-main {
+    width: auto;
+    height: 70px;
+}
+a.nav-link {
+    font-size: 1.5rem;
+}
+.body .right{
+    min-height: 100%;
+}
+.search-back{
+    min-height: 88vh;
+}
+.search-back h1{
+    text-align: center;
+    color: aliceblue;
+}
+.search-back{
+    background: rgba(0, 0, 0, 0.35);
+    background-size:98%; 
+    padding: 50px 0px;
+}
+nav.navbar.navbar-expand-sm.navbar-dark.fixed-top{
+    background: #00000026;
+}
+div#collapsibleNavId ul li {
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.dropdown{
+    padding: 0px 65px;
+}
+.search-form{
+    padding: 40px 10px;
+}
+.search{
+    width: 100%;
+}
+.search input{
+    border: 0.4px solid #ffffff00;
+}
+.select-option-location-citys{
+    width: 100%;
+}
+.select-option-location-citys select{
+    border: 0.4px solid #ffffff00;
+}
+.search-button button{
+    height: calc(1.5em + 1rem + 8px);
+    width: 100%;
+    color: #f8f9fa;
+    background-color: #ff8d00;
+    border-color: #ff8d00;
+}
+.search-button button:hover{
+    color: #f8f9fa;
+    background-color: #e58500;
+    border-color: #e58500;
+}
+.body .search-data {
+    height: 56vh;
+    overflow: auto;
+}
+.search-data .data{
+    background: #f1f1f1;
+    padding: 15px 15px;
+    margin-bottom: 5px;
+    margin: 10px 35px;
+}
+.search-data .data:hover{
+    background: #e0e0e0; 
+}
+.search-data .data:active{
+    background: #e0e0e0;
+}
+.search-data .data a:hover{
+    color: #000000;
+    text-decoration: none;
+}
+.search-data .data a{
+    color: #000000;
+    text-decoration: none;
+}
+.search-data .data .name{
+    font-size: 20px
+}
+.search-data .data .address{
+    font-size: 15px
+}
+#yourmapid {
+    position: absolute;
+    width: 97%;
+    height: 97%;
+    background-color: #f2efe9;
+  }

@@ -1,0 +1,117 @@
+body{
+    overflow-x: hidden;
+    background: #f1f1f1;
+    font-family: Roboto;
+}
+a.navbar-brand.logo-main {
+    height: 80px;
+    width: auto;
+}
+
+a.navbar-brand.logo-main img {
+    min-width: 100%;
+    height: 100%;
+}
+.sticky .navbar-brand.logo-main {
+    width: auto;
+    height: 70px;
+}
+.general{
+    height: auto;
+    width: 100%;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    padding-top:150px; 
+}
+.body{
+    padding: 25px 0px;
+}
+.rounded{
+    border-radius: 1rem!important;
+}
+.search-back h1{
+    text-align: center;
+    color: aliceblue;
+}
+.search-back{
+    background: #0000006b;
+    background-size:98%; 
+    padding: 50px 0px;
+}
+nav.navbar.navbar-expand-sm.navbar-dark.fixed-top{
+    background: #00000026;
+}
+div#collapsibleNavId ul li {
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.dropdown{
+    padding: 0px 65px;
+}
+.search-form{
+    padding: 40px 10px;
+}
+.search{
+    width: 100%;
+}
+.search input{
+    border: 0.4px solid #ffffff00;
+}
+.select-option-location-citys{
+    width: 100%;
+}
+.select-option-location-citys select{
+    border: 0.4px solid #ffffff00;
+}
+.search-button button{
+    height: calc(1.5em + 1rem + 8px);
+    width: 100%;
+    color: #f8f9fa;
+    background-color: #ff8d00;
+    border-color: #ff8d00;
+}
+.search-button button:hover{
+    color: #f8f9fa;
+    background-color: #e58500;
+    border-color: #e58500;
+}
+.text h2{
+    color: #444;
+}
+.text span{
+    width: 140px;
+    height: 2px;
+    background-color: #d8d8d8;
+    margin: auto;
+    display: block;
+}
+.news{
+    padding: 50px 0px;
+}
+.news .card-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.news .card-body{
+    min-height: 172px;
+}
+a.footer-logo {
+    height: 173px;
+    width: auto;
+    display: block;
+}
+
+a.footer-logo img {
+    min-width: 100%;
+    height: 100%;
+}
+nav.navbar-hidden {
+    top: -125px;
+}
+#map-box {
+    margin: 9% 0 5% 0;
+    z-index: 10;
+}
